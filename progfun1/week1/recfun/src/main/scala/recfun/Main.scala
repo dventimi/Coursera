@@ -30,11 +30,16 @@ object Main {
         if (chars.head=='(') acc + 1 else
           if (chars.head==')') acc -1 else
           acc
-    if (iter(0, chars)<0) false else true
+    // if (iter(0, chars)>0) false else true
+    iter(0, chars)==0
     }
 
   /**
     * Exercise 3
     */
-  def countChange(money: Int, coins: List[Int]): Int = ???
+  def countChange(money: Int, coins: List[Int]): Int = {
+    if (money == 0) 1
+    else if (money > 0 && !coins.isEmpty) countChange(money - coins.head, coins) + countChange(money, coins.tail)
+    else 0
+  }
 }
