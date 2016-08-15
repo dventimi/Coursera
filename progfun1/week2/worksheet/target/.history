@@ -1,0 +1,9 @@
+run
+rationals
+println(rationals)
+Rational(1, 3)
+console
+compile
+run
+console
+run
